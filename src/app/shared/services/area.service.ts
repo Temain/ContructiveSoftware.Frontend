@@ -31,6 +31,17 @@ export class AreaService extends BaseService {
       return this.http.get<Area>(this.apiUri + '/areas/' + id.toString());
     }
 
+    createArea(area: Area): Observable<Area> {
+      const body = JSON.stringify(area);
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      };
+      const uri = environment.apiUri + '/areas';
+      return this.http.post<Area>(uri, body, httpOptions);
+    }
+
     editArea(area: Area): Observable<Area> {
       const body = JSON.stringify(area);
       const httpOptions = {

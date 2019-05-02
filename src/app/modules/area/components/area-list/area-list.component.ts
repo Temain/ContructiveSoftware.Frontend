@@ -34,10 +34,8 @@ export class AreaListComponent implements OnInit {
   }
 
   deleteArea(id) {
-    debugger
     this.areaService.deleteArea(id)
       .subscribe(_ => {
-        debugger
         const index = this.areas
           .map(x => x.id)
           .indexOf(id);

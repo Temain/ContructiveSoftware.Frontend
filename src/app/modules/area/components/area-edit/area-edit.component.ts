@@ -27,7 +27,7 @@ export class AreaEditComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.areaId = params.id;
     });
-}
+  }
 
   ngOnInit() {
     this.initForm();
